@@ -1,0 +1,15 @@
+User #class
+true #isEntity
+axonactive #namespace
+user_master #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+userName String #field
+userName PERSISTENT #fieldModifier
+userName NOT_NULLABLE #fieldModifier
+password String #field
+password PERSISTENT #fieldModifier
+password NOT_NULLABLE #fieldModifier

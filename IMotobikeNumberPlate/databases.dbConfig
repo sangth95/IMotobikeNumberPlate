@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<databaseconfigs/>
+<databaseconfigs>
+    <databaseconfig name="IMotobikeNumberPlate" url="jdbc:postgresql://localhost:5432/IMotobikeNumberPlate" driver="org.postgresql.Driver" user="postgres" password="\u0046\u009D\u0019\u008E\u007E\u006A\u006C\u00FE\u0089\u005F\u00EF\u000E\u0093\u00DE\u00A5\u00B7\u000B\u0068\u00C8\u00AF\u00C8\u006F\u0010\u00C7\u0019\u0018\u0032\u006B\u00E0\u0053\u006D\u006E\u00F3\u0064\u0047\u0080\u0083\u0004\u0071\u00C5\u00AA\u008D\u003F\u0095\u0073\u0035\u0015\u00A3"/>
+</databaseconfigs>
