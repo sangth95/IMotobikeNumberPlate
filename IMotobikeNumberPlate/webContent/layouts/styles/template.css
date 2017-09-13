@@ -1,0 +1,107 @@
+html {
+  overflow-y: scroll;
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: small;
+  min-height: 100%;
+}
+
+/*! Hack for IE10+11 that the scrollbar not overlays the page */
+@-ms-viewport {
+  width:auto;
+}
+
+.navbar {
+	width: 100%;
+	height: 71px;
+	margin-bottom: 0;
+	border-bottom: 1px solid #000;
+}
+
+.navbar .container-fluid {
+	height: 100%;
+	padding: 5px 5px;
+}
+
+.navbar-header {
+	width: 100%;
+	height: 100%;
+}
+
+.navbar > .container-fluid .navbar-brand {
+	width: 60px;
+	height: 100%;
+    margin-left: 0;
+    padding: 0;
+}
+
+.logo {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.logo img {
+	display: block;
+	border: 1px solid #000;
+	width: 100%;
+	height: 100%;
+}
+
+.title-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: calc(100% - 60px);
+	height: 100%;
+	margin-left: 60px;
+}
+
+.title {
+	width: 100%;
+	font-size: 24px;
+	text-align: center;
+}
+
+.user-info {
+	width: 100%;
+	text-align: right;
+}
+
+.username {
+	color: #ff69b4;
+}
+
+form#logout {
+	display: inline-block;
+}
+
+form#logout a {
+	text-decoration: underline;
+}
+
+.content {
+	padding: 0 5px;
+	margin-top: 71px;
+	margin-bottom: 51px;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 0 5px;
+	height: 51px;
+	border-top: 1px solid #000;
+}
+
+/* Override bootstrap otherwise h:panelGrid tag has no padding */
+td, th {
+  padding: 1px;
+}
