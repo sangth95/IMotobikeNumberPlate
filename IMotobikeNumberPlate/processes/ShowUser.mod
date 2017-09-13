@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Sep 13 02:48:26 ICT 2017]
+[>Created: Wed Sep 13 15:12:12 ICT 2017]
 15E77876FF3197CB 3.20 #module
 >Proto >Proto Collection #zClass
 Sr0 ShowUser Big #zClass
@@ -20,9 +20,9 @@ Sr0 @PushWFArc f3 '' #zField
 Sr0 @PushWFArc f4 '' #zField
 >Proto Sr0 Sr0 ShowUser #zField
 Sr0 f0 outLink start.ivp #txt
-Sr0 f0 type axonactive.Data #txt
+Sr0 f0 type axonactive.UserList #txt
 Sr0 f0 inParamDecl '<> param;' #txt
-Sr0 f0 actionDecl 'axonactive.Data out;
+Sr0 f0 actionDecl 'axonactive.UserList out;
 ' #txt
 Sr0 f0 guid 15E77878846BDEC8 #txt
 Sr0 f0 requestEnabled true #txt
@@ -39,14 +39,18 @@ Sr0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 Sr0 f0 @C|.responsibility Everybody #txt
 Sr0 f0 17 17 30 30 -21 17 #rect
 Sr0 f0 @|StartRequestIcon #fIcon
-Sr0 f1 type axonactive.Data #txt
+Sr0 f1 type axonactive.UserList #txt
 Sr0 f1 273 17 30 30 0 15 #rect
 Sr0 f1 @|EndIcon #fIcon
-Sr0 f2 actionDecl 'axonactive.Data out;
+Sr0 f2 actionDecl 'axonactive.UserList out;
 ' #txt
 Sr0 f2 actionTable 'out=in;
 ' #txt
-Sr0 f2 actionCode ivy.log.info(recordset); #txt
+Sr0 f2 actionCode 'import utils.RecordToUserConverter;
+import axonactive.User;
+ivy.log.info(recordset);
+
+out.userList = RecordToUserConverter.convertRecordListToUserList(recordset.getRecords());' #txt
 Sr0 f2 dbExceptionId '>> Ignore Exception' #txt
 Sr0 f2 dbSql '<?xml version=""1.0"" standalone=""no""?>
 <!DOCTYPE SELECT SYSTEM  ""sqlStatements.dtd"">
@@ -55,7 +59,7 @@ Sr0 f2 dbUrl IMotobikeNumberPlate #txt
 Sr0 f2 cache '{/cache false /invalidation false /scope 0 /groupname ""/lifetime_group "0"/invalidation_time_group ""/identifier ""/lifetime_entry "0"/invalidation_time_entry ""}' #txt
 Sr0 f2 lotSize 2147483647 #txt
 Sr0 f2 startIdx 0 #txt
-Sr0 f2 type axonactive.Data #txt
+Sr0 f2 type axonactive.UserList #txt
 Sr0 f2 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -71,8 +75,13 @@ Sr0 f3 expr out #txt
 Sr0 f3 47 32 88 32 #arcP
 Sr0 f4 expr out #txt
 Sr0 f4 216 32 273 32 #arcP
->Proto Sr0 .type axonactive.Data #txt
+>Proto Sr0 .type axonactive.UserList #txt
 >Proto Sr0 .processKind NORMAL #txt
+>Proto Sr0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language/>
+</elementInfo>
+' #txt
 >Proto Sr0 0 0 32 24 18 0 #rect
 >Proto Sr0 @|BIcon #fIcon
 Sr0 f0 mainOut f3 tail #connect

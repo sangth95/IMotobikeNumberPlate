@@ -1,0 +1,6 @@
+IMotobikeNumberPlateRequestDialogData #class
+axonactive.IMotobikeNumberPlateRequestDialog #namespace
+fullName String #field
+fullName PERSISTENT #fieldModifier
+id String #field
+id PERSISTENT #fieldModifier

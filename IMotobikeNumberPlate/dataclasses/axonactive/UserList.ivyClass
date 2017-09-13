@@ -1,0 +1,3 @@
+UserList #class
+axonactive #namespace
+userList List<axonactive.User> #field
