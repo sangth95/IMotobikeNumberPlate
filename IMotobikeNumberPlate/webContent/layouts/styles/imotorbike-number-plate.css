@@ -1,3 +1,125 @@
 form#information {
+	margin-top: 90px;
+}
+
+#information>table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#information>table>tbody>tr {
+	display: flex;
+}
+
+#information>table>tbody>tr>td {
+	display: flex;
+}
+
+#information>table>tbody>tr>td>fieldset {
+	width: 100%;
+}
+
+#information>table>tbody>tr>td>fieldset tr:nth-child(even) {
+	height: 10px;
+}
+
+#information .ui-panelgrid {
+	border: 0;
+}
+
+#information .ui-widget-content:first-child .ui-panelgrid-cell {
+	padding: 0;
+	width: 50%;
+	border: 0;
+}
+
+#information .ui-widget-content:first-child .ui-panelgrid-cell:first-child
+	{
+	padding-right: 5px;
+}
+
+#information .ui-widget-content:first-child .ui-panelgrid-cell:last-child
+	{
+	padding-left: 5px;
+}
+
+#information fieldset table {
+	width: 100%;
+}
+
+#information fieldset.ui-fieldset {
 	border: 1px solid #000;
+	border-radius: 0;
+	padding: 0 10px 0;
+}
+
+#information .ui-fieldset-legend {
+	color: #000;
+	font-weight: bold;
+	background: none;
+	border: 0;
+	margin-bottom: 10px;
+	padding: 0 5px !important;
+}
+
+#information .ui-inputfield {
+	color: #000 !important;
+	padding: 5px !important;
+	border: 1px solid #000;
+	background: none;
+	width: calc(100% - 12px);
+}
+
+#information span[id*='id-number'] .ui-inputfield {
+	width: calc(100% - 12px);
+}
+
+#information span .ui-inputfield {
+	width: calc(100% - 54px);
+}
+
+#information span button {
+	width: 32px !important;
+	height: 32px;
+}
+
+#information .ui-button {
+	margin-right: 0;
+}
+
+#information .ui-button.ui-button-icon-only .ui-button-text {
+	padding: 0 !important;
+}
+
+.ui-outputlabel {
+	color: #000;
+}
+
+.ui-outputlabel .ui-outputlabel-rfi {
+	color: #ff0000;
+}
+
+label.ui-state-error {
+	color: #000 !important;
+}
+
+input[type="text"].ui-state-error, .ui-inputtextarea.ui-state-error {
+	border: 1px solid #ff0000 !important;
+}
+
+div.ui-message-error {
+	color: #ff0000 !important;
+	font-size: 14px;
+	border: 0;
+	padding: 0 0 10px !important;
+	margin: 0;
+}
+
+div.ui-message-error span {
+	margin: 0;
+}
+
+div.address.ui-message-error {
+	padding-bottom: 5px !important;
+	margin-top: -5px;
 }

@@ -16,52 +16,73 @@
 		<ui:define name="content">
 			<h:form id="information">
 				<p:panelGrid columns="2">
-					<p:fieldset legend="Personal Information">
-						<h:panelGrid columns="2">
+					<p:fieldset legend="Personal Information" class="personal-information">
+						<h:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8">
 							<p:outputLabel for="fullname" value="Fullname:" />
-							<p:inputText id="fullname" required="true" />
+							<p:inputText id="fullname" required="true" requiredMessage="This field is required">
+								<f:validateLength maximum="100" />
+							</p:inputText>
+							<h:outputText />
+							<p:message for="fullname" display="text" />
 
 							<p:outputLabel for="id-number" value="ID:" />
-							<p:inputText id="id-number" required="true" />							
-
-							<p:outputLabel for="birthday" value="Birthday:" />
-							<p:calendar id="birthday" showOn="button" required="true" />
+							<p:inputText id="id-number" required="true" requiredMessage="This field is required">
+								<p:keyFilter regEx="/[0-9]/i" />
+								<f:validateLength minimum="8" maximum="12" />
+							</p:inputText>						
+							<h:outputText />
+							<p:message for="id-number" display="text" />
 							
+							<p:outputLabel for="birthday" value="Birthday:" />
+							<p:calendar id="birthday" showOn="button" required="true" requiredMessage="This field is required" />
+							<h:outputText />
+							<p:message for="birthday" display="text" />
+														
 							<p:outputLabel for="email" value="Email:" />
 							<p:inputText id="email" />
+							<h:outputText />
+							<h:outputText />
 							
 							<p:outputLabel for="address" value="Address:" />
-							<p:inputTextarea id="address" rows="6" cols="33" required="true" />
+							<p:inputTextarea id="address" rows="4" cols="33" required="true" requiredMessage="This field is required" />
+							<h:outputText />
+							<p:message for="address" display="text" styleClass="address" />
 						</h:panelGrid>
 					</p:fieldset>						
-					<p:fieldset legend="Motorbike Information">
-						<h:panelGrid columns="2">
+					<p:fieldset legend="Motorbike Information" class="motorbike-information">
+						<h:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8">
 							<p:outputLabel for="type" value="Type:" />
-							<p:inputText id="type" required="true" />
-
+							<p:inputText id="type" required="true" requiredMessage="This field is required" />
+							<h:outputText />
+							<p:message for="type" display="text" />
+							
 							<p:outputLabel for="chassis-number" value="Chassis Number:" />
-							<p:inputText id="chassis-number" required="true" />
-							
+							<p:inputText id="chassis-number" required="true" requiredMessage="This field is required" />
+							<h:outputText />
+							<p:message for="chassis-number" display="text" />
+														
 							<p:outputLabel for="chassis-frame-number" value="Chassis frame number:" />
-							<p:inputText id="chassis-frame-number" required="true" />	
-							
+							<p:inputText id="chassis-frame-number" required="true" requiredMessage="This field is required" />	
+							<h:outputText />
+							<p:message for="chassis-frame-number" display="text" />
+														
 							<p:outputLabel for="description" value="Description:" />
 							<p:inputTextarea id="description" rows="6" cols="33" />
 						</h:panelGrid>
 					</p:fieldset>
-					<p:fieldset legend="Request Number Plate">
-						<h:panelGrid>
-							<p:row>
-								<h:outputText value="XXXXXXXXXX" />
-							</p:row>
-
-							<p:row>
-								<p:commandButton value="Generate"></p:commandButton>
-								<p:commandButton value="Submit"></p:commandButton>							
-							</p:row>
-						</h:panelGrid>
-					</p:fieldset>
 				</p:panelGrid>
+				<p:fieldset legend="Request Number Plate">
+					<h:panelGrid>
+						<p:row>
+							<h:outputText value="XXXXXXXXXX" />
+						</p:row>
+
+						<p:row>
+							<p:commandButton update="information" value="Generate"></p:commandButton>
+							<p:commandButton value="Submit"></p:commandButton>							
+						</p:row>
+					</h:panelGrid>
+				</p:fieldset>
 			</h:form>
 		</ui:define>
 	</ui:composition>
