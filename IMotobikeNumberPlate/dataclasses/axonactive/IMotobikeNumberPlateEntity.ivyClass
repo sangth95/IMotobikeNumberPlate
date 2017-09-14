@@ -1,0 +1,42 @@
+IMotobikeNumberPlateEntity #class
+true #isEntity
+axonactive #namespace
+i_mobile_number_plate #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id id #dbFieldName
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+fullName String #field
+fullName full_name #dbFieldName
+fullName PERSISTENT #fieldModifier
+fullName 100 #dbFieldLength
+userIdentity String #field
+userIdentity user_identity #dbFieldName
+userIdentity PERSISTENT #fieldModifier
+userIdentity 12 #dbFieldLength
+birthDay Date #field
+birthDay birth_day #dbFieldName
+birthDay PERSISTENT #fieldModifier
+email String #field
+email email #dbFieldName
+email PERSISTENT #fieldModifier
+address String #field
+address address #dbFieldName
+address PERSISTENT #fieldModifier
+types String #field
+types types #dbFieldName
+types PERSISTENT #fieldModifier
+chassisNumber String #field
+chassisNumber chassis_number #dbFieldName
+chassisNumber PERSISTENT #fieldModifier
+chassisNumber 17 #dbFieldLength
+chassisFrameNumber String #field
+chassisFrameNumber chassis_frame_number #dbFieldName
+chassisFrameNumber PERSISTENT #fieldModifier
+chassisFrameNumber 17 #dbFieldLength
+description String #field
+description description #dbFieldName
+description PERSISTENT #fieldModifier
+description 1000 #dbFieldLength
