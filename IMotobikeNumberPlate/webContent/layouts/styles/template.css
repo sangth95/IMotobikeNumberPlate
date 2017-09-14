@@ -1,18 +1,19 @@
 html {
-  overflow-y: scroll;
-  min-height: 100%;
-  position: relative;
+	overflow-y: scroll;
+	min-height: 100%;
+	position: relative;
 }
 
 body {
-  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: small;
-  min-height: 100%;
+	font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: small;
+	min-height: 100%;
 }
 
 /*! Hack for IE10+11 that the scrollbar not overlays the page */
-@-ms-viewport {
-  width:auto;
+@
+-ms-viewport {
+	width: auto;
 }
 
 .navbar {
@@ -32,11 +33,11 @@ body {
 	height: 100%;
 }
 
-.navbar > .container-fluid .navbar-brand {
+.navbar>.container-fluid .navbar-brand {
 	width: 60px;
 	height: 100%;
-    margin-left: 0;
-    padding: 0;
+	margin-left: 0;
+	padding: 0;
 }
 
 .logo {
@@ -52,7 +53,7 @@ body {
 	height: 100%;
 }
 
-.title-container {
+.site-title-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -61,7 +62,7 @@ body {
 	margin-left: 60px;
 }
 
-.title {
+.site-title {
 	width: 100%;
 	font-size: 24px;
 	text-align: center;
@@ -103,5 +104,5 @@ footer {
 
 /* Override bootstrap otherwise h:panelGrid tag has no padding */
 td, th {
-  padding: 1px;
+	padding: 1px;
 }
