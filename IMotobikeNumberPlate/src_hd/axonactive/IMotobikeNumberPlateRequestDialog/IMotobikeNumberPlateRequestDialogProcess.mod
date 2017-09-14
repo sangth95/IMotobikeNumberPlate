@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Sep 13 16:27:15 ICT 2017]
+[>Created: Thu Sep 14 18:58:15 ICT 2017]
 15E7A905FC35A471 3.20 #module
 >Proto >Proto Collection #zClass
 Is0 IMotobikeNumberPlateRequestDialogProcess Big #zClass
@@ -21,57 +21,141 @@ Is0 @PushWFArc f2 '' #zField
 Is0 @RichDialogProcessStart f3 '' #zField
 Is0 @RichDialogEnd f4 '' #zField
 Is0 @PushWFArc f5 '' #zField
+Is0 @RichDialogProcessEnd f7 '' #zField
+Is0 @PushWFArc f8 '' #zField
+Is0 @RichDialogProcessStart f6 '' #zField
+Is0 @RichDialogMethodStart f9 '' #zField
+Is0 @RichDialogProcessEnd f10 '' #zField
+Is0 @PushWFArc f11 '' #zField
 >Proto Is0 Is0 IMotobikeNumberPlateRequestDialogProcess #zField
 Is0 f0 guid 15E7A905FDFB76D7 #txt
 Is0 f0 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
-Is0 f0 method start(String,String) #txt
+Is0 f0 method start(String,String,Date,String,String,String,String,String,String,String) #txt
 Is0 f0 disableUIEvents true #txt
 Is0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<java.lang.String fullName,java.lang.String id> param = methodEvent.getInputArguments();
+<java.lang.String fullName,java.lang.String userIdentity,ch.ivyteam.ivy.scripting.objects.Date birthDay,java.lang.String email,java.lang.String address,java.lang.String types,java.lang.String chassisNumber,java.lang.String chassisFrameNumber,java.lang.String description,java.lang.String numberPlate> param = methodEvent.getInputArguments();
 ' #txt
-Is0 f0 inParameterMapAction 'out.fullName=param.fullName;
-out.id=param.id;
+Is0 f0 inParameterMapAction 'out.address=param.address;
+out.birthDay=param.birthDay;
+out.chassisFrameNumber=param.chassisFrameNumber;
+out.chassisNumber=param.chassisNumber;
+out.description=param.description;
+out.email=param.email;
+out.fullName=param.fullName;
+out.numberPlate=param.numberPlate;
+out.types=param.types;
+out.userIdentity=param.userIdentity;
 ' #txt
-Is0 f0 outParameterDecl '<java.lang.String fullName,java.lang.String id> result;
+Is0 f0 outParameterDecl '<axonactive.IMotobikeNumberPlateEntity motobikeNumberPlate> result;
 ' #txt
-Is0 f0 outParameterMapAction 'result.fullName=in.fullName;
-result.id=in.id;
+Is0 f0 outParameterMapAction 'result.motobikeNumberPlate.address=in.address;
+result.motobikeNumberPlate.birthDay=in.birthDay;
+result.motobikeNumberPlate.chassisFrameNumber=in.chassisFrameNumber;
+result.motobikeNumberPlate.chassisNumber=in.chassisNumber;
+result.motobikeNumberPlate.description=in.description;
+result.motobikeNumberPlate.email=in.email;
+result.motobikeNumberPlate.fullName=in.fullName;
+result.motobikeNumberPlate.numberPlate=in.numberPlate;
+result.motobikeNumberPlate.types=in.types;
+result.motobikeNumberPlate.userIdentity=in.userIdentity;
 ' #txt
 Is0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>start(String,String)</name>
+        <name>start(String,String,Date,String,String,String,String,String,String)</name>
+        <nameStyle>67,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Is0 f0 83 51 26 26 -49 15 #rect
+Is0 f0 74 51 26 26 -169 15 #rect
 Is0 f0 @|RichDialogInitStartIcon #fIcon
 Is0 f1 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
 Is0 f1 211 51 26 26 0 12 #rect
 Is0 f1 @|RichDialogProcessEndIcon #fIcon
 Is0 f2 expr out #txt
-Is0 f2 109 64 211 64 #arcP
+Is0 f2 100 64 211 64 #arcP
 Is0 f3 guid 15E7A905FE7BC36F #txt
 Is0 f3 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
 Is0 f3 actionDecl 'axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData out;
 ' #txt
-Is0 f3 actionTable 'out=in;
+Is0 f3 actionTable 'out.address=in.address;
+out.birthDay=in.birthDay;
+out.chassisFrameNumber=in.chassisFrameNumber;
+out.chassisNumber=in.chassisNumber;
+out.description=in.description;
+out.email=in.email;
+out.fullName=in.fullName;
+out.numberPlate=in.numberPlate;
+out.types=in.types;
+out.userIdentity=in.userIdentity;
 ' #txt
+Is0 f3 actionCode ivy.log.info(in.fullName); #txt
 Is0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>close</name>
+        <nameStyle>5,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Is0 f3 83 147 26 26 -15 12 #rect
+Is0 f3 74 147 26 26 -15 15 #rect
 Is0 f3 @|RichDialogProcessStartIcon #fIcon
 Is0 f4 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
 Is0 f4 guid 15E7A905FE7933E5 #txt
-Is0 f4 211 147 26 26 0 12 #rect
+Is0 f4 212 148 24 24 0 12 #rect
 Is0 f4 @|RichDialogEndIcon #fIcon
 Is0 f5 expr out #txt
-Is0 f5 109 160 211 160 #arcP
+Is0 f5 100 160 212 160 #arcP
+Is0 f7 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
+Is0 f7 202 235 26 26 0 12 #rect
+Is0 f7 @|RichDialogProcessEndIcon #fIcon
+Is0 f8 100 248 202 248 #arcP
+Is0 f6 guid 15E7FFFA574990A6 #txt
+Is0 f6 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
+Is0 f6 actionDecl 'axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData out;
+' #txt
+Is0 f6 actionTable 'out=in;
+' #txt
+Is0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>generateNumberPlate</name>
+        <nameStyle>19,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Is0 f6 74 235 26 26 -61 15 #rect
+Is0 f6 @|RichDialogProcessStartIcon #fIcon
+Is0 f9 guid 15E80401CCAD4052 #txt
+Is0 f9 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
+Is0 f9 method generateNumberPlate() #txt
+Is0 f9 disableUIEvents false #txt
+Is0 f9 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
+<> param = methodEvent.getInputArguments();
+' #txt
+Is0 f9 outParameterDecl '<> result;
+' #txt
+Is0 f9 outActionCode 'import utils.NumberPlateGenerate;
+in.numberPlate = NumberPlateGenerate.generateNumberPlate();' #txt
+Is0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>generateNumberPlate()</name>
+        <nameStyle>21,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Is0 f9 83 355 26 26 -65 15 #rect
+Is0 f9 @|RichDialogMethodStartIcon #fIcon
+Is0 f10 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
+Is0 f10 307 339 26 26 0 12 #rect
+Is0 f10 @|RichDialogProcessEndIcon #fIcon
+Is0 f11 expr out #txt
+Is0 f11 108 367 307 352 #arcP
 >Proto Is0 .type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
 >Proto Is0 .processKind HTML_DIALOG #txt
 >Proto Is0 -8 -8 16 16 16 26 #rect
@@ -80,3 +164,7 @@ Is0 f0 mainOut f2 tail #connect
 Is0 f2 head f1 mainIn #connect
 Is0 f3 mainOut f5 tail #connect
 Is0 f5 head f4 mainIn #connect
+Is0 f6 mainOut f8 tail #connect
+Is0 f8 head f7 mainIn #connect
+Is0 f9 mainOut f11 tail #connect
+Is0 f11 head f10 mainIn #connect

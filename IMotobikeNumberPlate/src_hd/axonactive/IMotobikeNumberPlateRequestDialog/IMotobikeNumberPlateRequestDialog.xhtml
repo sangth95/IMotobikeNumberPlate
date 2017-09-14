@@ -7,35 +7,83 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:pm="http://primefaces.org/mobile">
 <h:body>
-	<ui:composition template="/layouts/basic.xhtml">
-		<ui:define name="title">IMotobikeNumberPlateRequestDialog</ui:define>
+	<ui:composition template="/layouts/template.xhtml">
+		<ui:define name="library">
+			<h:outputStylesheet name="layouts/styles/imotorbike-number-plate.css" />
+		</ui:define>
+		<ui:define name="title">iMotorbike Number Plate</ui:define>
+		<ui:define name="site-title">iMOTORBIKE NUMBER PLATE</ui:define>
 		<ui:define name="content">
-			<h3>
-				This is an <a
-					href="http://developer.axonivy.com/doc/latest/DesignerGuideHtml/ivy.userinterface.html#ivy-htmldialogs">Html
-					Dialog</a> implemented with JSF and <a href="http://primefaces.org/">Primefaces</a>
-				as widget library
-			</h3>
+			<h:form id="information">
+				<p:panelGrid columns="2">
+					<p:fieldset legend="Personal Information" class="personal-information">
+						<h:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8">
+							<p:outputLabel for="fullname" value="Fullname:" />
+							<p:inputText id="fullname" required="true" requiredMessage="This field is required">
+								<f:validateLength maximum="100" />
+							</p:inputText>
+							<h:outputText />
+							<p:message for="fullname" display="text" />
 
-			<h:form id="form">
-				<h:panelGrid columns="2">
-					<f:facet name="header">
-						<p:messages></p:messages>
-					</f:facet>
+							<p:outputLabel for="id-number" value="ID:" />
+							<p:inputText id="id-number" required="true" requiredMessage="This field is required">
+								<p:keyFilter regEx="/[0-9]/i" />
+								<f:validateLength minimum="8" maximum="12" />
+							</p:inputText>						
+							<h:outputText />
+							<p:message for="id-number" display="text" />
+							
+							<p:outputLabel for="birthday" value="Birthday:" />
+							<p:calendar id="birthday" showOn="button" required="true" requiredMessage="This field is required" />
+							<h:outputText />
+							<p:message for="birthday" display="text" />
+														
+							<p:outputLabel for="email" value="Email:" />
+							<p:inputText id="email" />
+							<h:outputText />
+							<h:outputText />
+							
+							<p:outputLabel for="address" value="Address:" />
+							<p:inputTextarea id="address" rows="4" cols="33" required="true" requiredMessage="This field is required" />
+							<h:outputText />
+							<p:message for="address" display="text" styleClass="address" />
+						</h:panelGrid>
+					</p:fieldset>						
+					<p:fieldset legend="Motorbike Information" class="motorbike-information">
+						<h:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8">
+							<p:outputLabel for="type" value="Type:" />
+							<p:inputText id="type" required="true" requiredMessage="This field is required" />
+							<h:outputText />
+							<p:message for="type" display="text" />
+							
+							<p:outputLabel for="chassis-number" value="Chassis Number:" />
+							<p:inputText id="chassis-number" required="true" requiredMessage="This field is required" />
+							<h:outputText />
+							<p:message for="chassis-number" display="text" />
+														
+							<p:outputLabel for="chassis-frame-number" value="Chassis frame number:" />
+							<p:inputText id="chassis-frame-number" required="true" requiredMessage="This field is required" />	
+							<h:outputText />
+							<p:message for="chassis-frame-number" display="text" />
+														
+							<p:outputLabel for="description" value="Description:" />
+							<p:inputTextarea id="description" rows="6" cols="33" />
+						</h:panelGrid>
+					</p:fieldset>
+				</p:panelGrid>
+				<p:fieldset legend="Request Number Plate">
+					<h:panelGrid>
+						<p:row>
+							<h:outputText value="#{data.numberPlate}" id="numberPlate"/>
+						</p:row>
 
-					<h:outputLabel>Fullname</h:outputLabel>
-					<h:inputText value="#{data.fullName}"></h:inputText>
-
-					<h:outputLabel>ID</h:outputLabel>
-					<h:inputText value="#{data.id}"></h:inputText>
-
-					<br />
-					
-					<p:commandButton actionListener="#{logic.close}" value="Submit"
-						update="form" icon="ui-icon-check" />
-				</h:panelGrid>
+						<p:row>
+							<p:commandButton actionListener="#{logic.generateNumberPlate}" value="Generate" update="numberPlate"></p:commandButton>
+							<p:commandButton value="Submit" actionListener="#{logic.close}"></p:commandButton>							
+						</p:row>
+					</h:panelGrid>
+				</p:fieldset>
 			</h:form>
-
 		</ui:define>
 	</ui:composition>
 </h:body>

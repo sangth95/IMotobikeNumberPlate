@@ -1,12 +1,11 @@
 package utils;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import ch.ivyteam.ivy.scripting.objects.Record;
 import axonactive.User;
+import ch.ivyteam.ivy.scripting.objects.Record;
 
 public class RecordToUserConverter {
 	private RecordToUserConverter() {}

@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Sep 13 15:12:12 ICT 2017]
+[>Created: Thu Sep 14 10:30:43 ICT 2017]
 15E77876FF3197CB 3.20 #module
 >Proto >Proto Collection #zClass
 Sr0 ShowUser Big #zClass
@@ -40,7 +40,7 @@ Sr0 f0 @C|.responsibility Everybody #txt
 Sr0 f0 17 17 30 30 -21 17 #rect
 Sr0 f0 @|StartRequestIcon #fIcon
 Sr0 f1 type axonactive.UserList #txt
-Sr0 f1 273 17 30 30 0 15 #rect
+Sr0 f1 537 17 30 30 0 15 #rect
 Sr0 f1 @|EndIcon #fIcon
 Sr0 f2 actionDecl 'axonactive.UserList out;
 ' #txt
@@ -69,12 +69,12 @@ Sr0 f2 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Sr0 f2 88 10 128 44 -55 -8 #rect
+Sr0 f2 208 10 128 44 -55 -8 #rect
 Sr0 f2 @|DBStepIcon #fIcon
 Sr0 f3 expr out #txt
-Sr0 f3 47 32 88 32 #arcP
+Sr0 f3 47 32 208 32 #arcP
 Sr0 f4 expr out #txt
-Sr0 f4 216 32 273 32 #arcP
+Sr0 f4 336 32 537 32 #arcP
 >Proto Sr0 .type axonactive.UserList #txt
 >Proto Sr0 .processKind NORMAL #txt
 >Proto Sr0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

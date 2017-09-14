@@ -40,3 +40,7 @@ description String #field
 description description #dbFieldName
 description PERSISTENT #fieldModifier
 description 1000 #dbFieldLength
+numberPlate String #field
+numberPlate number_plate #dbFieldName
+numberPlate PERSISTENT #fieldModifier
+numberPlate 12 #dbFieldLength
