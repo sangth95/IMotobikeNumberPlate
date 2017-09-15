@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Sep 14 18:58:15 ICT 2017]
+[>Created: Fri Sep 15 08:37:41 ICT 2017]
 15E7A905FC35A471 3.20 #module
 >Proto >Proto Collection #zClass
 Is0 IMotobikeNumberPlateRequestDialogProcess Big #zClass
@@ -149,13 +149,13 @@ Is0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Is0 f9 83 355 26 26 -65 15 #rect
+Is0 f9 74 355 26 26 -65 15 #rect
 Is0 f9 @|RichDialogMethodStartIcon #fIcon
 Is0 f10 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
-Is0 f10 307 339 26 26 0 12 #rect
+Is0 f10 307 355 26 26 0 12 #rect
 Is0 f10 @|RichDialogProcessEndIcon #fIcon
 Is0 f11 expr out #txt
-Is0 f11 108 367 307 352 #arcP
+Is0 f11 100 368 307 368 #arcP
 >Proto Is0 .type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
 >Proto Is0 .processKind HTML_DIALOG #txt
 >Proto Is0 -8 -8 16 16 16 26 #rect
