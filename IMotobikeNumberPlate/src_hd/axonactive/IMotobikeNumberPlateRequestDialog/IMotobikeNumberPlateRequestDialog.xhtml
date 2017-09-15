@@ -19,14 +19,14 @@
 					<p:fieldset legend="Personal Information" class="personal-information">
 						<h:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8">
 							<p:outputLabel for="fullname" value="Fullname:" />
-							<p:inputText id="fullname" required="true" requiredMessage="This field is required">
+							<p:inputText id="fullname" required="true" requiredMessage="This field is required" value="#{data.fullName}">
 								<f:validateLength maximum="100" />
 							</p:inputText>
 							<h:outputText />
 							<p:message for="fullname" display="text" />
 
 							<p:outputLabel for="id-number" value="ID:" />
-							<p:inputText id="id-number" required="true" requiredMessage="This field is required">
+							<p:inputText id="id-number" required="true" requiredMessage="This field is required" value="#{data.userIdentity}">
 								<p:keyFilter regEx="/[0-9]/i" />
 								<f:validateLength minimum="8" maximum="12" />
 							</p:inputText>						
@@ -34,17 +34,17 @@
 							<p:message for="id-number" display="text" />
 							
 							<p:outputLabel for="birthday" value="Birthday:" />
-							<p:calendar id="birthday" showOn="button" required="true" requiredMessage="This field is required" />
+							<p:calendar id="birthday" showOn="button" required="true" requiredMessage="This field is required" value="#{data.birthDay}"/>
 							<h:outputText />
 							<p:message for="birthday" display="text" />
 														
 							<p:outputLabel for="email" value="Email:" />
-							<p:inputText id="email" />
+							<p:inputText id="email" value="#{data.email}"/>
 							<h:outputText />
 							<h:outputText />
 							
 							<p:outputLabel for="address" value="Address:" />
-							<p:inputTextarea id="address" rows="4" cols="33" required="true" requiredMessage="This field is required" />
+							<p:inputTextarea id="address" rows="4" cols="33" required="true" requiredMessage="This field is required" value="#{data.address}"/>
 							<h:outputText />
 							<p:message for="address" display="text" styleClass="address" />
 						</h:panelGrid>
@@ -52,22 +52,22 @@
 					<p:fieldset legend="Motorbike Information" class="motorbike-information">
 						<h:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8">
 							<p:outputLabel for="type" value="Type:" />
-							<p:inputText id="type" required="true" requiredMessage="This field is required" />
+							<p:inputText id="type" required="true" requiredMessage="This field is required" value="#{data.types}"/>
 							<h:outputText />
 							<p:message for="type" display="text" />
 							
 							<p:outputLabel for="chassis-number" value="Chassis Number:" />
-							<p:inputText id="chassis-number" required="true" requiredMessage="This field is required" />
+							<p:inputText id="chassis-number" required="true" requiredMessage="This field is required" value="#{data.chassisNumber}"/>
 							<h:outputText />
 							<p:message for="chassis-number" display="text" />
 														
 							<p:outputLabel for="chassis-frame-number" value="Chassis frame number:" />
-							<p:inputText id="chassis-frame-number" required="true" requiredMessage="This field is required" />	
+							<p:inputText id="chassis-frame-number" required="true" requiredMessage="This field is required" value="#{data.chassisFrameNumber}"/>	
 							<h:outputText />
 							<p:message for="chassis-frame-number" display="text" />
 														
 							<p:outputLabel for="description" value="Description:" />
-							<p:inputTextarea id="description" rows="6" cols="33" />
+							<p:inputTextarea id="description" rows="6" cols="33" value="#{data.description}"/>
 						</h:panelGrid>
 					</p:fieldset>
 				</p:panelGrid>
@@ -78,7 +78,7 @@
 						</p:row>
 
 						<p:row>
-							<p:commandButton actionListener="#{logic.generateNumberPlate}" value="Generate" update="numberPlate"></p:commandButton>
+							<p:commandButton actionListener="#{logic.generateNumberPlate}" value="Generate" update="numberPlate" immediate="true"></p:commandButton>
 							<p:commandButton value="Submit" actionListener="#{logic.close}"></p:commandButton>							
 						</p:row>
 					</h:panelGrid>

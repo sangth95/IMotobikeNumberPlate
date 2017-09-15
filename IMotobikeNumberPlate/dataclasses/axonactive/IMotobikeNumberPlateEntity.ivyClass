@@ -43,4 +43,4 @@ description 1000 #dbFieldLength
 numberPlate String #field
 numberPlate number_plate #dbFieldName
 numberPlate PERSISTENT #fieldModifier
-numberPlate 12 #dbFieldLength
+numberPlate 13 #dbFieldLength

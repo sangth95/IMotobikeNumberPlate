@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Sep 15 08:37:41 ICT 2017]
+[>Created: Fri Sep 15 11:36:55 ICT 2017]
 15E7A905FC35A471 3.20 #module
 >Proto >Proto Collection #zClass
 Is0 IMotobikeNumberPlateRequestDialogProcess Big #zClass
@@ -25,8 +25,6 @@ Is0 @RichDialogProcessEnd f7 '' #zField
 Is0 @PushWFArc f8 '' #zField
 Is0 @RichDialogProcessStart f6 '' #zField
 Is0 @RichDialogMethodStart f9 '' #zField
-Is0 @RichDialogProcessEnd f10 '' #zField
-Is0 @PushWFArc f11 '' #zField
 >Proto Is0 Is0 IMotobikeNumberPlateRequestDialogProcess #zField
 Is0 f0 guid 15E7A905FDFB76D7 #txt
 Is0 f0 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
@@ -59,6 +57,7 @@ result.motobikeNumberPlate.numberPlate=in.numberPlate;
 result.motobikeNumberPlate.types=in.types;
 result.motobikeNumberPlate.userIdentity=in.userIdentity;
 ' #txt
+Is0 f0 outActionCode 'ivy.log.info("full name: " + in.fullName);' #txt
 Is0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -90,7 +89,10 @@ out.numberPlate=in.numberPlate;
 out.types=in.types;
 out.userIdentity=in.userIdentity;
 ' #txt
-Is0 f3 actionCode ivy.log.info(in.fullName); #txt
+Is0 f3 actionCode 'import utils.DateTimeUtils;
+DateTimeUtils.formatDate(in.birthDay);
+
+ivy.log.info("birthday: " + in.birthDay);' #txt
 Is0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -117,6 +119,19 @@ Is0 f6 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateReq
 Is0 f6 actionDecl 'axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData out;
 ' #txt
 Is0 f6 actionTable 'out=in;
+out.address=in.address;
+out.birthDay=in.birthDay;
+out.chassisFrameNumber=in.chassisFrameNumber;
+out.chassisNumber=in.chassisNumber;
+out.description=in.description;
+out.email=in.email;
+out.fullName=in.fullName;
+out.numberPlate=in.numberPlate;
+out.types=in.types;
+out.userIdentity=in.userIdentity;
+' #txt
+Is0 f6 actionCode 'import utils.NumberPlateGenerator;
+in.numberPlate = NumberPlateGenerator.generateNumberPlate();
 ' #txt
 Is0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -129,7 +144,7 @@ Is0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 Is0 f6 74 235 26 26 -61 15 #rect
 Is0 f6 @|RichDialogProcessStartIcon #fIcon
-Is0 f9 guid 15E80401CCAD4052 #txt
+Is0 f9 guid 15E8386F9332E47F #txt
 Is0 f9 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
 Is0 f9 method generateNumberPlate() #txt
 Is0 f9 disableUIEvents false #txt
@@ -138,24 +153,15 @@ Is0 f9 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodE
 ' #txt
 Is0 f9 outParameterDecl '<> result;
 ' #txt
-Is0 f9 outActionCode 'import utils.NumberPlateGenerate;
-in.numberPlate = NumberPlateGenerate.generateNumberPlate();' #txt
 Is0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>generateNumberPlate()</name>
-        <nameStyle>21,5,7
-</nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Is0 f9 74 355 26 26 -65 15 #rect
+Is0 f9 67 339 26 26 -65 15 #rect
 Is0 f9 @|RichDialogMethodStartIcon #fIcon
-Is0 f10 type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
-Is0 f10 307 355 26 26 0 12 #rect
-Is0 f10 @|RichDialogProcessEndIcon #fIcon
-Is0 f11 expr out #txt
-Is0 f11 100 368 307 368 #arcP
 >Proto Is0 .type axonactive.IMotobikeNumberPlateRequestDialog.IMotobikeNumberPlateRequestDialogData #txt
 >Proto Is0 .processKind HTML_DIALOG #txt
 >Proto Is0 -8 -8 16 16 16 26 #rect
@@ -166,5 +172,3 @@ Is0 f3 mainOut f5 tail #connect
 Is0 f5 head f4 mainIn #connect
 Is0 f6 mainOut f8 tail #connect
 Is0 f8 head f7 mainIn #connect
-Is0 f9 mainOut f11 tail #connect
-Is0 f11 head f10 mainIn #connect

@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Sep 14 17:39:21 ICT 2017]
+[>Created: Fri Sep 15 15:45:12 ICT 2017]
 15E7A838DADB0B5A 3.20 #module
 >Proto >Proto Collection #zClass
 Ht0 HandleNewMotobikeNumberPlateRequest Big #zClass
@@ -55,7 +55,6 @@ Ht0 f2 responseActionDecl 'axonactive.IMotobikeNumberPlateEntity out;
 ' #txt
 Ht0 f2 responseMappingAction 'out=in;
 out.address=result.motobikeNumberPlate.address;
-out.birthDay=result.motobikeNumberPlate.birthDay;
 out.chassisFrameNumber=result.motobikeNumberPlate.chassisFrameNumber;
 out.chassisNumber=result.motobikeNumberPlate.chassisNumber;
 out.description=result.motobikeNumberPlate.description;
@@ -66,9 +65,11 @@ out.numberPlate=result.motobikeNumberPlate.numberPlate;
 out.types=result.motobikeNumberPlate.types;
 out.userIdentity=result.motobikeNumberPlate.userIdentity;
 ' #txt
-Ht0 f2 responseActionCode 'ivy.log.info("in: " + in.fullName);
+Ht0 f2 responseActionCode 'import utils.DateTimeUtils;
+ivy.log.info("in: " + in.fullName);
 
-ivy.log.info("result: " + result.motobikeNumberPlate.fullName);' #txt
+ivy.log.info("result: " + result.motobikeNumberPlate.fullName);
+out.birthDay = DateTimeUtils.formatDate(result.motobikeNumberPlate.birthDay);' #txt
 Ht0 f2 isAsynch false #txt
 Ht0 f2 isInnerRd false #txt
 Ht0 f2 userContext '* ' #txt
@@ -89,10 +90,12 @@ Ht0 f5 actionDecl 'axonactive.IMotobikeNumberPlateEntity out;
 ' #txt
 Ht0 f5 actionTable 'out=in;
 ' #txt
-Ht0 f5 actionCode 'ivy.log.info("persist data");' #txt
+Ht0 f5 actionCode 'ivy.log.info("persist data");
+
+ivy.log.info("birthday: " + in.birthDay);' #txt
 Ht0 f5 dbSql '<?xml version=""1.0"" standalone=""no""?>
 <!DOCTYPE INSERT SYSTEM  ""sqlStatements.dtd"">
-<INSERT><Table name=''i_mobile_number_plate''/><Value column=''address''><AnyExpression>in.address</AnyExpression></Value><Value column=''birth_day''><AnyExpression>in.birthDay</AnyExpression></Value><Value column=''chassis_frame_number''><AnyExpression>in.chassisFrameNumber</AnyExpression></Value><Value column=''chassis_number''><AnyExpression>in.chassisNumber</AnyExpression></Value><Value column=''description''><AnyExpression>in.description</AnyExpression></Value><Value column=''email''><AnyExpression>in.email</AnyExpression></Value><Value column=''full_name''><AnyExpression>in.fullName</AnyExpression></Value><Value column=''types''><AnyExpression>in.types</AnyExpression></Value><Value column=''user_identity''><AnyExpression>in.userIdentity</AnyExpression></Value></INSERT>' #txt
+<INSERT><Table name=''i_mobile_number_plate''/><Value column=''address''><AnyExpression>in.address</AnyExpression></Value><Value column=''birth_day''><AnyExpression>in.birthDay</AnyExpression></Value><Value column=''chassis_frame_number''><AnyExpression>in.chassisFrameNumber</AnyExpression></Value><Value column=''chassis_number''><AnyExpression>in.chassisNumber</AnyExpression></Value><Value column=''description''><AnyExpression>in.description</AnyExpression></Value><Value column=''email''><AnyExpression>in.email</AnyExpression></Value><Value column=''full_name''><AnyExpression>in.fullName</AnyExpression></Value><Value column=''types''><AnyExpression>in.types</AnyExpression></Value><Value column=''user_identity''><AnyExpression>in.userIdentity</AnyExpression></Value><Value column=''number_plate''><AnyExpression>in.numberPlate</AnyExpression></Value></INSERT>' #txt
 Ht0 f5 dbUrl IMotobikeNumberPlate #txt
 Ht0 f5 cache '{/cache false /invalidation false /scope 0 /groupname ""/lifetime_group "0"/invalidation_time_group ""/identifier ""/lifetime_entry "0"/invalidation_time_entry ""}' #txt
 Ht0 f5 lotSize 2147483647 #txt
