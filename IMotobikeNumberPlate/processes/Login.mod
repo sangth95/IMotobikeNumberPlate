@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Sep 15 17:40:26 ICT 2017]
+[>Created: Fri Sep 15 18:02:36 ICT 2017]
 15E84D36355766DA 3.20 #module
 >Proto >Proto Collection #zClass
 Ln0 Login Big #zClass
@@ -54,8 +54,8 @@ param.user.userName=in.userName;
 Ln0 f3 responseActionDecl 'axonactive.User out;
 ' #txt
 Ln0 f3 responseMappingAction 'out=in;
-out.password=in.password;
-out.userName=in.userName;
+out.password=result.user.password;
+out.userName=result.user.userName;
 ' #txt
 Ln0 f3 isAsynch false #txt
 Ln0 f3 isInnerRd false #txt
