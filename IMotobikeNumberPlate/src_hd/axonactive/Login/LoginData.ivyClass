@@ -1,0 +1,4 @@
+LoginData #class
+axonactive.Login #namespace
+user axonactive.User #field
+user PERSISTENT #fieldModifier
