@@ -1,0 +1,14 @@
+NumberPlateResult #class
+true #isEntity
+axonactive #namespace
+number_plate_result #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+requestId Integer #field
+requestId request_id #dbFieldName
+requestId PERSISTENT #fieldModifier
+result String #field
+result PERSISTENT #fieldModifier

@@ -1,0 +1,141 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile">
+<h:body>
+	<ui:composition template="/layouts/template.xhtml">
+		<ui:define name="library">
+			<h:outputStylesheet library="ivy-dialog"
+				name="imotorbike-number-plate.css" />
+			<h:outputScript library="ivy-dialog"
+				name="imotorbike-number-plate.js" />
+		</ui:define>
+		<ui:define name="title">iMotorbike Number Plate</ui:define>
+		<ui:define name="site-title">iMOTORBIKE NUMBER PLATE</ui:define>
+		<ui:define name="user-info" />
+		<ui:define name="content">
+			<h:form id="information">
+				<p:panelGrid columns="2">
+					<p:fieldset legend="Personal Information"
+						styleClass="personal-information">
+						<h:panelGrid columns="2"
+							columnClasses="ui-grid-col-4,ui-grid-col-8">
+							<p:outputLabel for="fullname" value="Fullname:" />
+							<p:inputText id="fullname" required="true"
+								requiredMessage="This field is required" maxlength="100"
+								value="#{data.fullName}" disabled="true">
+								<p:ajax event="blur" update="@this msg-fullname" />
+							</p:inputText>
+							<h:outputText />
+							<p:message for="fullname" display="text" id="msg-fullname" />
+
+							<p:outputLabel for="id-number" value="ID:" />
+							<p:inputText id="id-number" required="true"
+								requiredMessage="This field is required" maxlength="12"
+								value="#{data.userIdentity}" disabled="true">
+								<p:ajax event="blur" update="@this msg-id-number" />
+							</p:inputText>
+							<h:outputText />
+							<p:message for="id-number" display="text" id="msg-id-number" />
+
+							<p:outputLabel for="birthday" value="Birthday:" />
+							<p:calendar id="birthday" showOn="button" required="true"
+								requiredMessage="This field is required" 
+								locale="de" navigator="true"
+								value="#{data.birthDay}" disabled="true" pattern="dd/MM/yyyy">
+								<f:attribute name="birthday" value="" />
+								<p:ajax event="blur" update="msg-birthday"
+									oncomplete="calendarValidationFailed(args)" />
+								<p:ajax event="dateSelect" update="@this msg-birthday" />
+							</p:calendar>
+							<p:watermark value="dd/mm/yyyy" for="birthday" />
+							<p:message for="birthday" display="text" id="msg-birthday" />
+
+							<p:outputLabel for="email" value="Email:" />
+							<p:inputText id="email" validatorMessage="Invalid email format"
+								value="#{data.email}" disabled="true">
+								<f:validateRegex
+									pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+								<p:ajax event="blur" update="@this msg-email" />
+							</p:inputText>
+							<h:outputText />
+							<p:message for="email" display="text" id="msg-email" />
+
+							<p:outputLabel for="address" value="Address:" />
+							<p:inputTextarea id="address" rows="4" cols="33" required="true"
+								requiredMessage="This field is required" maxlength="255"
+								value="#{data.address}" disabled="true">
+								<p:ajax event="blur" update="@this msg-address" />
+							</p:inputTextarea>
+							<h:outputText />
+							<p:message for="address" display="text" styleClass="address"
+								id="msg-address" />
+						</h:panelGrid>
+					</p:fieldset>
+					<p:fieldset legend="Motorbike Information"
+						styleClass="motorbike-information">
+						<h:panelGrid columns="2"
+							columnClasses="ui-grid-col-4,ui-grid-col-8">
+							<p:outputLabel for="type" value="Type:" />
+							<p:selectOneMenu id="type" required="true"
+								requiredMessage="This field is required" value="" disabled="true">
+							<f:selectItem itemLabel="#{data.types}"></f:selectItem>
+							</p:selectOneMenu>
+							<h:outputText />
+							<p:message for="type" display="text" id="msg-type" />
+
+							<p:outputLabel for="chassis-number" value="Chassis Number:" />
+							<p:inputText id="chassis-number" required="true"
+								requiredMessage="This field is required" maxlength="17"
+								value="#{data.chassisNumber}" disabled="true">
+								<p:ajax event="blur" update="@this msg-chassis-number" />
+							</p:inputText>
+							<h:outputText />
+							<p:message for="chassis-number" display="text"
+								id="msg-chassis-number" />
+
+							<p:outputLabel for="chassis-frame-number"
+								value="Chassis frame number:" />
+							<p:inputText id="chassis-frame-number" required="true"
+								requiredMessage="This field is required" maxlength="17"
+								value="#{data.chassisFrameNumber}" disabled="true">
+								<p:ajax event="blur" update="@this msg-chassis-frame-number" />
+							</p:inputText>
+							<h:outputText />
+							<p:message for="chassis-frame-number" display="text"
+								id="msg-chassis-frame-number" />
+
+							<p:outputLabel for="description" value="Description:" />
+							<p:inputTextarea id="description" rows="6" cols="33"
+								maxlength="1000" value="#{data.description}" disabled="true">
+								<p:ajax event="blur" update="@this msg-description" />
+							</p:inputTextarea>
+							<h:outputText />
+							<p:message for="description" display="text" id="msg-description" />
+						</h:panelGrid>
+					</p:fieldset>
+				</p:panelGrid>
+				<p:fieldset legend="Request Number Plate">
+					<h:panelGrid>
+						<p:row>
+							<h:outputText value="#{data.numberPlate}"  id="numberPlate"/>
+						</p:row>
+
+						<p:row>
+							<p:commandButton 
+								value="Reject" update="information" actionListener="#{logic.rejectRequest}"
+								/>
+							<p:commandButton value="Approve" actionListener="#{logic.close}"
+								/>
+						</p:row>
+					</h:panelGrid>
+				</p:fieldset>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

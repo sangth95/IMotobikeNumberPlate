@@ -1,0 +1,218 @@
+form#information {
+	margin-top: 90px;
+}
+
+#information>table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#information>table>tbody>tr {
+	display: flex;
+}
+
+#information>table>tbody>tr>td {
+	display: flex;
+}
+
+#information>table>tbody>tr>td>fieldset {
+	width: 100%;
+}
+
+#information>table>tbody>tr>td>fieldset tr:nth-child(even) {
+	height: 10px;
+}
+
+#information .ui-panelgrid {
+	border: 0;
+}
+
+#information .ui-widget-content:first-child .ui-panelgrid-cell {
+	padding: 0;
+	width: 50%;
+	border: 0;
+}
+
+#information .ui-widget-content:first-child .ui-panelgrid-cell:first-child
+	{
+	padding-right: 5px;
+}
+
+#information .ui-widget-content:first-child .ui-panelgrid-cell:last-child
+	{
+	padding-left: 5px;
+}
+
+#information fieldset table {
+	width: 100%;
+}
+
+#information fieldset.ui-fieldset {
+	border: 1px solid #000;
+	border-radius: 0;
+	padding: 0 10px 0;
+}
+
+#information .ui-fieldset-legend {
+	color: #000;
+	font-weight: bold;
+	background: none;
+	border: 0;
+	margin-bottom: 10px;
+	padding: 0 5px !important;
+}
+
+#information input.ui-inputfield,
+#information textarea.ui-inputfield {
+	color: #000 !important;
+	padding: 5px !important;
+	border: 1px solid #000;
+	background: none;
+	width: calc(100% - 12px);
+}
+
+#information span[id*='id-number'] .ui-inputfield {
+	width: calc(100% - 12px);
+}
+
+#information span .ui-inputfield {
+	width: calc(100% - 54px);
+}
+
+#information span button {
+	width: 32px !important;
+	height: 32px;
+}
+
+#information .ui-button {
+	margin-right: 0;
+	border-radius: 0 !important;
+	background: #2399e5;
+}
+
+#information .ui-button.ui-button-icon-only .ui-button-text {
+	padding: 0 !important;
+}
+
+#information .ui-button.ui-state-hover,
+#information .ui-button.ui-state-focus {
+	background-color: #1f89ce;
+}
+
+#information .ui-outputlabel {
+	color: #000;
+}
+
+div.ui-datepicker {
+	width: 280px;
+}
+
+.ui-datepicker-calendar tbody tr td a {
+	color: #000 !important;
+}
+
+#information .ui-outputlabel .ui-outputlabel-rfi {
+	color: #ff0000;
+}
+
+#information .ui-selectonemenu {
+	border: 1px solid #000 !important;
+	color: #000;
+	width: calc(100% - 58px);
+}
+
+#information .ui-selectonemenu .ui-inputfield {
+	padding: 5px !important;
+	background: none;
+	color: #000;
+}
+
+#information .ui-selectonemenu.ui-state-focus .ui-selectonemenu-label {
+	background: none !important;
+}
+
+#information .ui-selectonemenu .ui-selectonemenu-trigger {
+	border-bottom-color: #000 !important;
+	background-color: #d9d9d9;
+}
+
+#information .ui-selectonemenu .ui-selectonemenu-trigger.ui-state-hover,
+#information .ui-selectonemenu .ui-selectonemenu-trigger.ui-state-focus {
+	background-color: #ababab;
+}
+
+#information .ui-selectonemenu .ui-selectonemenu-trigger.ui-state-error {
+	border: 0 !important;
+}
+
+.ui-selectonemenu-panel .ui-selectonemenu-list-item {
+	font-size: 14px;
+	padding: 10px 6px !important;
+	color: #000 !important;
+}
+
+#information .ui-selectonemenu .ui-selectonemenu-trigger .ui-icon-triangle-1-s {
+	margin-top: 8px !important;
+}
+
+#information label.ui-state-error {
+	color: #000 !important;
+}
+
+#information input[type="text"].ui-state-error,
+#information .ui-selectonemenu.ui-state-error,
+.ui-inputtextarea.ui-state-error,
+.ui-widget-content .ui-state-error {
+	border: 1px solid #ff0000 !important;
+}
+
+#information div.ui-message-error {
+	color: #ff0000 !important;
+	font-size: 14px;
+	border: 0;
+	padding: 0 0 10px !important;
+	margin: 0;
+}
+
+#information div.ui-message-error span {
+	margin: 0;
+}
+
+#information div.address.ui-message-error {
+	padding-bottom: 5px !important;
+	margin-top: -5px;
+}
+
+#information>fieldset tbody tr:first-child td {
+	height: 80px;
+	display: flex;
+	justify-content: center;
+}
+
+#information>fieldset tbody tr:last-child {
+	display: flex;
+	justify-content: center;
+}
+
+#information>fieldset tbody tr:last-child td {
+	margin: 10px 0;
+	display: flex;
+	justify-content: space-between;
+	width: 210px;
+}
+
+#information>fieldset tbody tr:last-child td button {
+	width: 100px;
+	color: #fff;
+}
+
+#information span[id*='numberPlate'] {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 340px;
+	border: 1px solid #000;
+	text-align: center;
+	font-size: 50px;
+}
