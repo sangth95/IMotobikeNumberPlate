@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Sep 15 11:36:55 ICT 2017]
+[>Created: Tue Sep 19 13:34:48 ICT 2017]
 15E7A905FC35A471 3.20 #module
 >Proto >Proto Collection #zClass
 Is0 IMotobikeNumberPlateRequestDialogProcess Big #zClass
@@ -44,6 +44,7 @@ out.numberPlate=param.numberPlate;
 out.types=param.types;
 out.userIdentity=param.userIdentity;
 ' #txt
+Is0 f0 inActionCode 'out.birthDay = null;' #txt
 Is0 f0 outParameterDecl '<axonactive.IMotobikeNumberPlateEntity motobikeNumberPlate> result;
 ' #txt
 Is0 f0 outParameterMapAction 'result.motobikeNumberPlate.address=in.address;
@@ -57,7 +58,6 @@ result.motobikeNumberPlate.numberPlate=in.numberPlate;
 result.motobikeNumberPlate.types=in.types;
 result.motobikeNumberPlate.userIdentity=in.userIdentity;
 ' #txt
-Is0 f0 outActionCode 'ivy.log.info("full name: " + in.fullName);' #txt
 Is0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -91,8 +91,7 @@ out.userIdentity=in.userIdentity;
 ' #txt
 Is0 f3 actionCode 'import utils.DateTimeUtils;
 DateTimeUtils.formatDate(in.birthDay);
-
-ivy.log.info("birthday: " + in.birthDay);' #txt
+' #txt
 Is0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>

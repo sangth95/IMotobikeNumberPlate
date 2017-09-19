@@ -24,6 +24,7 @@ public class RecordToUserConverter {
 	}
 	
 	public static List<User> convertRecordListToUserList(List<Record> records) {
-		return records.stream().flatMap(r -> Stream.of(convertRecordToUser(r))).collect(Collectors.toList());
+//		return records.stream().flatMap(r -> Stream.of(convertRecordToUser(r))).collect(Collectors.toList());
+		return records.stream().map(RecordToUserConverter::convertRecordToUser).collect(Collectors.toList());
 	}
 }

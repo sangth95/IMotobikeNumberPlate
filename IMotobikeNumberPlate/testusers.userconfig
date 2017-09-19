@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<userConfig/>
+<userConfig>
+    <user>
+        <username>lehuutan</username>
+        <password>123456789</password>
+        <fullName>Le Huu Tan</fullName>
+        <emailAddress>huutanctct@gmail.com</emailAddress>
+        <role>Policement</role>
+    </user>
+</userConfig>
